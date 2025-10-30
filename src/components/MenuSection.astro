@@ -1,0 +1,53 @@
+---
+const pizzas = [
+	{
+		name: "Margherita Classica",
+		description: "Mozzarella fior di latte, tomate San Marzano, albahaca fresca y aceite EVO.",
+		price: "$6800",
+	},
+	{
+		name: "Pepperoni di Parma",
+		description: "Pepperoni artesanal curado 30 dias, provolone ahumado y miel trufada.",
+		price: "$7300",
+	},
+	{
+		name: "Funghi Tartufo",
+		description: "Mix de hongos salteados al ajillo, crema de parmesano y aceite de trufa negra.",
+		price: "$7600",
+	},
+	{
+		name: "Calabresa Piccante",
+		description: "Salame calabres, salsa pomodoro y ajies rojos ahumados.",
+		price: "$7100",
+	},
+	{
+		name: "Bianca Burrata",
+		description: "Base bianca con ricotta, burrata fresca, pesto de pistachos y limon.",
+		price: "$7800",
+	},
+];
+---
+<section id="carta" class="bg-stone-950">
+	<div class="mx-auto max-w-6xl px-6 py-24">
+		<div class="md:flex md:items-end md:justify-between">
+			<div>
+				<h2 class="text-sm font-semibold uppercase tracking-[0.4em] text-amber-400">carta</h2>
+				<p class="mt-4 text-3xl font-semibold md:text-4xl">Pizzas insignia de la casa</p>
+			</div>
+			<p class="mt-6 max-w-xl text-base text-stone-300 md:mt-0 md:text-right md:text-lg">Cada pizza se hornea al momento y se termina con toppings frescos. Preguntanos por nuestra rotacion semanal de sabores fuera de carta, disponibles jueves a domingo.</p>
+		</div>
+		<div class="mt-12 grid gap-6 md:grid-cols-2">
+			{pizzas.map((pizza) => (
+				<article class="rounded-3xl border border-stone-800 bg-stone-900/50 p-6 transition hover:border-amber-400">
+					<div class="flex items-start justify-between gap-4">
+						<div>
+							<h3 class="text-lg font-semibold text-white">{pizza.name}</h3>
+							<p class="mt-2 text-sm text-stone-300">{pizza.description}</p>
+						</div>
+						<span class="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-300">{pizza.price}</span>
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

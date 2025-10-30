@@ -1,0 +1,50 @@
+---
+const locations = [
+	{
+		name: "Palermo Soho",
+		address: "Thames 1795",
+		hours: "Lun-Dom - 19 a 00 hs",
+		phone: "+54 11 4567 8910",
+	},
+	{
+		name: "Belgrano R",
+		address: "Av. Monroe 2550",
+		hours: "Mar-Dom - 19 a 23 hs",
+		phone: "+54 11 4455 6677",
+	},
+	{
+		name: "Delivery & Take Away",
+		address: "Pedidos por app o WhatsApp",
+		hours: "Lun-Dom - 19 a 23 hs",
+		phone: "+54 9 11 6123 9988",
+	},
+];
+---
+<section id="donde" class="bg-stone-900">
+	<div class="mx-auto max-w-6xl px-6 py-24">
+		<div class="md:flex md:items-end md:justify-between">
+			<div>
+				<h2 class="text-sm font-semibold uppercase tracking-[0.4em] text-amber-400">donde comprar</h2>
+				<p class="mt-4 text-3xl font-semibold md:text-4xl">Elegi tu ritual pizzero</p>
+			</div>
+			<p class="mt-6 max-w-xl text-base text-stone-300 md:mt-0 md:text-right md:text-lg">Reserva tu mesa o pedi por delivery en CABA. En breve abrimos nuestra primera dark kitchen en Zona Norte.</p>
+		</div>
+		<div class="mt-12 grid gap-6 md:grid-cols-3">
+			{locations.map((location) => (
+				<div class="flex h-full flex-col justify-between rounded-3xl border border-stone-800 bg-stone-950/50 p-6">
+					<div>
+						<h3 class="text-lg font-semibold text-white">{location.name}</h3>
+						<p class="mt-2 text-sm text-stone-300">{location.address}</p>
+						<p class="mt-1 text-sm text-stone-400">{location.hours}</p>
+					</div>
+					<a href={`tel:${location.phone.replace(/\s+/g, '')}`} class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber-400 hover:text-amber-300">
+						<span>Llamar {location.phone}</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+							<path d="M2.3 3.3c-.4.4-.5 1-.3 1.5 1.2 3 3.6 5.6 6.6 6.8.5.2 1.1.1 1.5-.3l1.5-1.5a1 1 0 0 1 1.1-.2l3.3 1.3a1 1 0 0 1 .6.9v3.2a1 1 0 0 1-1 1A15 15 0 0 1 2 4.3a1 1 0 0 1 1-1h3.2a1 1 0 0 1 .9.6L8.4 7a1 1 0 0 1-.2 1.1l-1.5 1.5Z" />
+						</svg>
+					</a>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
